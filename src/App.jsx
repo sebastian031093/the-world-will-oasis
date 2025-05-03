@@ -1,9 +1,19 @@
-import { useState } from 'react';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+
+import Dashboard from './pages/Dashboard';
 
 function App() {
-  const [count, setCount] = useState(0);
-
-  return <div>Hello from biggest proyect.</div>;
+  return (
+    <BrowserRouter>
+      <Routes>
+        <Route path="dashborad" element={<Dashboard />} />
+        <Route path="" element={<Dashboard />} />
+        <Route path="" element={<Dashboard />} />
+        <Route path="" element={<Dashboard />} />
+        <Route path="" element={<Dashboard />} />
+      </Routes>
+    </BrowserRouter>
+  );
 }
 
 export default App;
