@@ -1,5 +1,7 @@
-export function helloFromUtils() {
-  console.log('hello from folder');
+export function helloFromUtils(message = '') {
+  console.log(`Hello from utils funtion.. ${message}`);
+  const messageFunction = `Hello from utils funtion.. ${message}`;
+  return messageFunction;
 }
 
 export function ohtherHi() {
