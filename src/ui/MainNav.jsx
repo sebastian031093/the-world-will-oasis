@@ -1,4 +1,12 @@
-import styled from "styled-components";
+import styled from 'styled-components';
+import {
+  HiOutlineHome,
+  HiOutlineCalendarDays,
+  HiOutlineHomeModern,
+  HiOutlineUserCircle,
+  HiOutlineWrenchScrewdriver,
+} from 'react-icons/hi2';
+import { NavLink } from 'react-router-dom';
 
 const NavList = styled.ul`
   display: flex;
@@ -6,7 +14,7 @@ const NavList = styled.ul`
   gap: 0.8rem;
 `;
 
-const Link = styled.a`
+const StyledNavLink = styled(NavLink)`
   &:link,
   &:visited {
     display: flex;
@@ -44,3 +52,52 @@ const Link = styled.a`
     color: var(--color-brand-600);
   }
 `;
+
+function MainNav() {
+  return (
+    <nav>
+      <NavList>
+        <li>
+          <StyledNavLink to="/dashborad">
+            <HiOutlineHome />
+            <span>Home</span>
+          </StyledNavLink>
+        </li>
+      </NavList>
+      <NavList>
+        <li>
+          <StyledNavLink to="/bookings">
+            <HiOutlineCalendarDays />
+            <span>bookings</span>
+          </StyledNavLink>
+        </li>
+      </NavList>
+      <NavList>
+        <li>
+          <StyledNavLink to="/cabins">
+            <HiOutlineHomeModern />
+            <span>cabins</span>
+          </StyledNavLink>
+        </li>
+      </NavList>
+      <NavList>
+        <li>
+          <StyledNavLink to="/users">
+            <HiOutlineUserCircle />
+            <span>users</span>
+          </StyledNavLink>
+        </li>
+      </NavList>
+      <NavList>
+        <li>
+          <StyledNavLink to="/settings">
+            <HiOutlineWrenchScrewdriver />
+            <span>settings</span>
+          </StyledNavLink>
+        </li>
+      </NavList>
+    </nav>
+  );
+}
+
+export default MainNav;
